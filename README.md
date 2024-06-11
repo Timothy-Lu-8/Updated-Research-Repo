@@ -1,3 +1,5 @@
+THIS REPO IS A MODIFIED VERSION OF A PRE-EXISTING REPO: https://github.com/cchamber/Open-Pose-Keras.git
+
 ### About this fork
 
 This fork contains **pure python version** of [Realtime Multi-Person Pose Estimation](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation). Initially it was forked from [Michal Faber fork](https://github.com/michalfaber/keras_Realtime_Multi-Person_Pose_Estimation), all credit for porting original work to Keras goes to him.
