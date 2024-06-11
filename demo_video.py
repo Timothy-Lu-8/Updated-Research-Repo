@@ -42,7 +42,7 @@ colors = [[255, 0, 0], [255, 85, 0], [255, 170, 0], [255, 255, 0], [170, 255, 0]
 def process (input_image, params, model_params):
     oriImg = cv2.cvtColor(input_image, cv2.COLOR_BGR2RGB)
     multiplier = [x * model_params['boxsize'] / oriImg.shape[0] for x in params['scale_search']]
-    heatmap_avg = zeros((oriImg.shape[0], oriImg.shape[1], 19))
+    heatmap_avg = np.zeros((oriImg.shape[0], oriImg.shape[1], 19))
     paf_avg = np.zeros((oriImg.shape[0], oriImg.shape[1], 38))
 
     for m in range(len(multiplier)):
