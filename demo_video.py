@@ -42,8 +42,7 @@ colors = [[255, 0, 0], [255, 85, 0], [255, 170, 0], [255, 255, 0], [170, 255, 0]
 def process (input_image, params, model_params):
     oriImg = cv2.cvtColor(input_image, cv2.COLOR_BGR2RGB)
     multiplier = [x * model_params['boxsize'] / oriImg.shape[0] for x in params['scale_search']]
-    heatmap_avg = 
-zeros((oriImg.shape[0], oriImg.shape[1], 19))
+    heatmap_avg = zeros((oriImg.shape[0], oriImg.shape[1], 19))
     paf_avg = np.zeros((oriImg.shape[0], oriImg.shape[1], 38))
 
     for m in range(len(multiplier)):
@@ -377,8 +376,8 @@ class VideoProcessorSK(VideoProcessor):
 
 
     
-input_path = '/content/Open-Pose-Keras/sample_videos'
-keras_weights_file= '/content/Open-Pose-Keras/model/keras/model.h5'
+input_path = '/content/Updated-Research-Repo/sample_videos'
+keras_weights_file= '/content/Updated-Research-Repo/model/keras/model.h5'
 copy_to = '/content/drive/My Drive/colab_openpose/output_files/'
 
 videos = np.sort([fn for fn in glob.glob(input_path+'/*') if "Labeled" not in fn])
