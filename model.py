@@ -1,11 +1,8 @@
-from keras.models import Model
-from keras.layers.merge import Concatenate
-from keras.layers import Activation, Input, Lambda
-from keras.layers.convolutional import Conv2D
-from keras.layers.pooling import MaxPooling2D
-from keras.layers.merge import Multiply
-from keras.regularizers import l2
-from keras.initializers import random_normal, constant
+from keras import Model, Input
+from keras.layers import Concatenate, Lambda, Activation, Conv2D, MaxPooling2D, Multiply
+from keras.regularizers import L2
+from keras.random import normal
+from keras.initializers import constant
 
 import re
 
@@ -17,8 +14,8 @@ import re
 def relu(x): return Activation('relu')(x)
 
 def conv(x, nf, ks, name, weight_decay):
-    kernel_reg = l2(weight_decay[0]) if weight_decay else None
-    bias_reg = l2(weight_decay[1]) if weight_decay else None
+    kernel_reg = L2(weight_decay[0]) if weight_decay else None
+    bias_reg = L2(weight_decay[1]) if weight_decay else None
 
     x = Conv2D(nf, (ks, ks), padding='same', name=name,
                kernel_regularizer=kernel_reg,
